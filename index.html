@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Chicago Tour</title>
+    <!-- Main Style -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Favicon -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.jpg"/>
+
+  </head>
+  <body background="images/willis.jpg">
+
+    <!-- Main Header -->
+    <div class="header">
+      <a href="index.html">
+        <img src="images/chicago.jpg" alt="Chicago" width="45" height="45" align="left"> Chicago Guide</img>
+      </a>
+    <div class="header-right">
+        <a class="active" href="index.html">Home</a>
+        <a href="places.html">Attractions</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="contact.html">Contact Us</a>
+
+    </div>
+  </div>
+
+
+<div>
+    <section>
+      <h1>Welcome to the Chicago Guide Website!</h1>
+      <p style="font-style:bold;color:black;">This website is your go to guide when you are visting Chicago.  It will take you through the main attractions
+      and resturants you should visit while you are in Chicago.  If you live in Chicago, you might be interested in
+      other attractions we have in the city.</p>
+
+    <h3><br>The Current Time in Chicago is:</h3>
+
+
+    <!-- Using Javascript to get the Current Time in Chicago 24 hour clock -->
+      <strong><p style="width:100px;color:blue; border-style: solid;border: 5px solid red;font-size:20px;" id="time"> </p></strong>
+
+      <!-- Calculating the Central Daylight Time in 24 hour clock format-->
+
+      <script type="text/javascript">
+      (function () {
+          function checkTime(i) {
+              return (i < 10) ? "0" + i : i;
+          }
+
+          function startTime() {
+              var today = new Date(),
+                 //Hour
+                  h = checkTime(today.getHours()),
+                  //Minutes
+                  m = checkTime(today.getMinutes()),
+                  //Seconds
+                  s = checkTime(today.getSeconds());
+              document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+              t = setTimeout(function () {
+                  startTime()
+              }, 500);
+          }
+          startTime();
+      })();
+
+      </script>
+
+    </section>
+</div>
+
+
+<section>
+  <!--Function for Google Maps Api-->
+  <br>
+  <div id="map" onclick="initMap()"></div>
+
+  <!--Create a Script Tag to Call the Function and Key-->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUUyQEJq0mRDy3PvEJQskprZYzw-so38s&callback=initMap"></script>
+
+</section>
+<!--References for further information-->
+  <section>
+    <br>
+    <h3>To learn more about Chicago visit:</h3>
+    <ul>
+      <a target="_blank" style="color:red" href="https://www.chicago.gov/city/en/about/history.html">Chicago's History</a>
+      <br>
+      <a target="_blank" style="color:red" href="https://www.choosechicago.com/">Chicago Trips</a>
+      <br>
+      <a target="_blank" style="color:red" href="https://en.wikipedia.org/wiki/Chicago">Learn More about Chicago</a>
+    </ul>
+
+  </section>
+
+
+<!-- Footer -->
+<div class="footer">
+  <div class="col-md-6">
+      <div class="different_text">
+      <!-- COPYRIGHT TEXT -->
+      <p>Web Application Project: Chicago Tours by <script>document.write(new Date().getFullYear())</script> Omar Quraishi.
+      <a href="mailto:oquraishi1@live.maryville.edu">Chicago Guide</a>
+      </p>
+      </div>
+  </div>
+</div>
+
+  <!-- Script For JS File and Jquery -->
+  <script src="js/google.js"></script>
+
+  </body>
+</html>

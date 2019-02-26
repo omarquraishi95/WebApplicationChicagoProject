@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Page</title>
+    <!-- Main Style -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Favicon -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.jpg"/>
+
+  </head>
+  <body>
+
+    <!-- Main Header -->
+    <div class="header">
+      <a href="index.html">
+        <img src="images/chicago.jpg" alt="Chicago" width="45" height="45" align="left"> Chicago Guide</img>
+      </a>
+    <div class="header-right">
+        <a href="index.html">Home</a>
+        <a href="places.html">Attractions</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a class="active" href="contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <div>
+    <!-- PHP File -->
+
+    <form method="post" action="email.php" enctype="multipart/form-data">
+     <input type="hidden" name="action" value="submit">
+
+     <h1>Need to Contact us directly?</h1>
+     <h3>*Fields are Required</h3>
+     <br></br>
+     <p><strong>Please fill out the form below and we will get back to you soon.</strong></p>
+     <br></br>
+
+     <!-- Contact Form -->
+
+     <label for="fullName"><strong>*</strong>Full Name</label>
+     <input type="text" id="fullName" name="fullName" pattern="[A-Za-z ]{1,64}" placeholder="Your Full Name.." required>
+
+
+     <label for="email"><strong>*</strong>Email</label>
+     <input type="email" id="email" name="email" placeholder="Your email.." required>
+
+     <label for="phoneNumber">Phone</label>
+     <input type="tel" id="phoneNumber" name="phoneNumber" pattern="\d{3}[\-]\d{3}[\-]\d{4}"  maxlength="12"  placeholder="Your Phone Number *Include Dashes* (Format 123-456-7890)..">
+
+
+     <br></br>
+
+     <!-- Submit or Reset(clear form)  -->
+     <input type="submit" onclick="thankyou()" value="Submit">
+     <input type="reset" value="Reset">
+
+     </form>
+
+  </div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="col-md-6">
+          <div class="different_text">
+          <!-- COPYRIGHT TEXT -->
+          <p>Web Application Project: Chicago Tours by <script>document.write(new Date().getFullYear())</script> Omar Quraishi.
+          <a href="mailto:oquraishi1@live.maryville.edu">Chicago Guide</a>
+          </p>
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Javascript -->
+  <script src="js/submit.js"></script>
+
+  </body>
+</html>
